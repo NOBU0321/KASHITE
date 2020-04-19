@@ -23,18 +23,18 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "ログイン", class: "btn btn-primary"%>
+        <%= f.submit "ログイン", class: "btn btn-normal btn-block"%>
       </div>
     <% end %>
 
     <hr/>
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+    <%= link_to "Facebookログイン", user_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" %>
     </div>
   </div>
 
 
 <style type="text/css">
-  .nimbus-is-editor {
+  body {
     background-image: url(https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg);
     background-position: center center;
     background-repeat: no-repeat;
