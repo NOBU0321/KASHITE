@@ -20,18 +20,18 @@
 
 
       <div class="actions">
-        <%= f.submit "登録", class: "btn btn-primary"%>
+        <%= f.submit "登録", class: "btn btn-normal btn-block"%>
       </div>
     <% end %>
 
     <hr/>
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+    <%= link_to "Facebook認証", user_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" %>
     <%# <%= render "devise/shared/links" %> 
   </div>
 </div>
 
 <style type="text/css">
-  .nimbus-is-editor {
+  body {
     background-image: url(https://cdn.pixabay.com/photo/2015/09/02/13/03/clothes-rail-918859_1280.jpg);
     background-position: center center;
     background-repeat: no-repeat;
