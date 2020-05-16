@@ -13,7 +13,7 @@ class LandsController < ApplicationController
   def create
     @land = current_user.lands.build(land_params)
     if @land.save
-      redirect_to listing_land_path(@land), notice: "投稿しました"
+      redirect_to listing_land_path(@land), notice: "掲載しました"
     else
       render :new, notice: "全ての欄を記入してください"
     end
@@ -56,6 +56,6 @@ class LandsController < ApplicationController
     end
 
     def land_params
-      params.require(:land).permit(:land_type, :listing_name, :summary, :address, :is_tap, :is_electronic, :is_gas, :is_parking, :price, :active)
+      params.require(:land).permit(:land_type, :purpose, :listing_name, :summary, :size, :address, :is_tap, :is_electronic, :is_gas, :is_parking, :price, :active)
     end
 end

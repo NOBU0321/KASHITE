@@ -1,2 +1,33 @@
-<h1>Land#pricing</h1>
-<p>Find me in app/views/land/pricing.html.erb</p>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'land_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        価格
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_with model: @land, local: true do |f| %>
+
+            <div class="row">
+              <div class="form-group">
+                <label>金額</label>
+                <%= f.text_field :price, placeholder: "例) 1,000円", class:"form-control" %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit "保存", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+  </div>>
+</div>
