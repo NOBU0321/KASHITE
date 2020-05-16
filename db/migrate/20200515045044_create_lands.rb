@@ -2,8 +2,10 @@ class CreateLands < ActiveRecord::Migration[5.2]
   def change
     create_table :lands do |t|
       t.string :land_type
+      t.string :purpose
       t.string :listing_name
       t.text :summary
+      t.text :size
       t.string :address
       t.boolean :is_tap
       t.boolean :is_electronic

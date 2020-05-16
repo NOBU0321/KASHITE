@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2020_05_15_045044) do
 
   create_table "lands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "land_type"
+    t.string "purpose"
     t.string "listing_name"
     t.text "summary"
+    t.text "size"
     t.string "address"
     t.boolean "is_tap"
     t.boolean "is_electronic"
