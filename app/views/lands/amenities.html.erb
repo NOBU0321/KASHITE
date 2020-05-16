@@ -1,2 +1,39 @@
-<h1>Land#amenities</h1>
-<p>Find me in app/views/land/amenities.html.erb</p>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'land_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        備品
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_with model: @land do |f| %>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_tap %> 水道
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :is_electronic %> 電気
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :is_gas %> ガス
+              </div>
+            </div>
+            <br/><br/>
+
+            <div class="text-center">
+              <%= f.submit "保存", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+  </div>>
+</div>

@@ -5,11 +5,11 @@
   <div class="panel-body">
     <div class="container">
 
-      <%= form_for @land do |f|%>
+      <%= form_with model: @land do |f|%>
         <div class="row">
           <div class="col-md-4 select">
             <div class="form-group">
-              <label></label>
+              <label>種別</label>
               <%= f.select :land_type, [["田んぼ", "rice-field"], ["畑", "farm"], ["山林", "forest"], ["雑種地", "others"]], id: "land_type", prompt: "選択してください", class: "form-control" %>
             </div>
           </div>
