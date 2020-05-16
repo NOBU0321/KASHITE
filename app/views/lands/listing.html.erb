@@ -11,7 +11,7 @@
 
       <div class="panel-body">
         <div class="container">
-          <%= form_with model: @land do |f|%>
+          <%= form_with model: @land do |f| %>
             <div class="row">
               <div class="col-md-4 select">
                 <div class="form-group">
@@ -30,7 +30,7 @@
               <div class="col-md-4 select">
                 <div class="form-group">
                   <label>面積</label>
-                  <%= f.text_field :size, placeholder: "例) 550,00㎡", class:"form-control" %>
+                  <%= f.text_field :size, placeholder: "例) 550,00㎡", id:"size", class:"form-control" %>
                 </div>
               </div>
 
@@ -56,9 +56,8 @@
               </div>
             </div>
 
-          <div><%= f.submit "保存", class: "btn btn-normal" %></div>
+            <div><%= f.submit "保存", class: "btn btn-normal" %></div>
           <% end %>
-
         </div>
       </div>
       

@@ -1,5 +1,6 @@
 class Land < ApplicationRecord
   belongs_to :user
+  
   validates :land_type, presence: true
   validates :purpose, presence: true
   validates :size, presence: true
