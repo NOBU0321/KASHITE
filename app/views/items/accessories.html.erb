@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'item_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        アクセサリー
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_with model: @item, local: true do |f| %>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_belt %> ベルト
+              </div>
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_shoes %> 靴
+              </div>
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_hat %> 帽子
+              </div>
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_watch %> 時計
+              </div>
+            </div>
+            <br/><br/>
+
+            <div class="text-center">
+              <%= f.submit "保存", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

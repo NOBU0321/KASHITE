@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-md-3">
-    <%= render 'land_menu' %>
+    <%= render 'item_menu' %>
   </div>
   <div class="col-md-9">
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        ロケーション
+        取引場所
       </div>
 
       <div class="panel-body">
         <div class="container">
-          <%= form_with model: @land, local: true do |f| %>
+          <%= form_with model: @item, local: true do |f| %>
 
             <div class="row">
               <div class="form-group">
                 <label>住所</label>
-                <%= f.text_field :address, placeholder: "住所を入力してください", class:"form-control" %>
+                <%= f.text_field :address, placeholder: "住所を入力してください(市町村まで記入）", class:"form-control" %>
               </div>
             </div>
 

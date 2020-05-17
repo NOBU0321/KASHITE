@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_type: MyString
+  item_scene: MyString
+  size: MyString
+  status: MyString
+  delivery: MyString
+  listing_name: MyString
+  summary: MyText
+  address: MyString
+  is_belt: false
+  is_shoes: false
+  is_hat: false
+  is_watch: false
+  price: 1
+  active: false
+  user: one
+
+two:
+  item_type: MyString
+  item_scene: MyString
+  size: MyString
+  status: MyString
+  delivery: MyString
+  listing_name: MyString
+  summary: MyText
+  address: MyString
+  is_belt: false
+  is_shoes: false
+  is_hat: false
+  is_watch: false
+  price: 1
+  active: false
+  user: two

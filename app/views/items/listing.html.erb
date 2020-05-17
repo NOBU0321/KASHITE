@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'item_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        概要
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_with model: @item, local: true do |f| %>
+            <div class="row">
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label>ファッション系統</label>
+                  <%= f.select :item_type, [["カジュアル", "カジュアル"], ["フォーマル", "フォーマル"], ["キレイめ", "キレイめ"], ["アメカジ", "アメカジ"], ["ストリート", "ストリート"], ["その他", "その他"]], id: "item_type", prompt: "選択してください", class: "form-control" %>
+                </div>
+              </div>
+              
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label>シーン別おすすめ</label>
+                  <%= f.select :item_scene, [["普段着", "普段着"], ["デート", "デート"], ["ビジネス", "ビジネス"], ["レジャー", "レジャー"], ["パーティー", "パーティー"], ["結婚式", "結婚式"], ["その他", "その他"]], id: "item_scene", prompt: "選択してください", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label>サイズ</label>
+                  <%= f.select :size, [["XS", "XS"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"], ["XXL", "XXL"]], id: "size", prompt: "選択してください", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label>商品の状態</label>
+                  <%= f.select :status, [["新品未使用", "新品未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れ無し", "目立った傷や汚れ無し"], ["やや傷や汚れあり", "やや傷や汚れあり"]], id: "status", prompt: "選択してください", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label>送料</label>
+                  <%= f.select :delivery, [["出品者負担(発送、返送)", "出品者負担(発送、返送)"], ["購入者負担(送料、返送)", "購入者負担(送料、返送)"]], id: "delivery", prompt: "選択してください", class: "form-control" %>
+                </div>
+              </div>
+            </div>
+
+            <div><%= f.submit "保存", class: "btn btn-normal" %></div>
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
