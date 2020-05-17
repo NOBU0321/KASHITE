@@ -10,25 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_045044) do
+ActiveRecord::Schema.define(version: 2020_05_17_135013) do
 
-  create_table "lands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "land_type"
-    t.string "purpose"
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "item_type"
+    t.string "item_scene"
+    t.string "size"
+    t.string "status"
+    t.string "delivery"
     t.string "listing_name"
     t.text "summary"
-    t.text "size"
     t.string "address"
-    t.boolean "is_tap"
-    t.boolean "is_electronic"
-    t.boolean "is_gas"
-    t.boolean "is_parking"
+    t.boolean "is_belt"
+    t.boolean "is_shoes"
+    t.boolean "is_hat"
+    t.boolean "is_watch"
     t.integer "price"
     t.boolean "active"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_lands_on_user_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,5 +55,5 @@ ActiveRecord::Schema.define(version: 2020_05_15_045044) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "lands", "users"
+  add_foreign_key "items", "users"
 end
