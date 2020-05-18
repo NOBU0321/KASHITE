@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :accessories, :location, :update]
 
   def index
     @items = current_user.items
@@ -33,6 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def photo_upload
+    @photos = @item.photos
   end
 
   def accessories
@@ -53,6 +55,10 @@ class ItemsController < ApplicationController
   private
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def is_authorised
+      redirect_to root_path, alert: "許可されていないユーザーです" unless current_user.id == @item.user_id
     end
 
     def item_params
