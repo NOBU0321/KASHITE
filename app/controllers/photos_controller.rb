@@ -8,11 +8,9 @@ class PhotosController < ApplicationController
         @item.photos.create(image: img)
       end
 
-    @photos = @item.photos
-    redirect_back(fallback_location: request.referer, notice: "保存しました")
+      @photos = @item.photos
+      redirect_back(fallback_location: request.referer, notice: "保存しました")
+    end
   end
-
-
-
 
 end

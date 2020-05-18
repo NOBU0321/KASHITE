@@ -14,12 +14,12 @@
           <div class="row">
             <div class="col-md-offset-3 col-md-6">
 
-              <%= form_with url: item_photos_path(@item), local: true, multipart: true do |f| %>
+              <%= form_for @item, url: item_photos_path(@item), method: 'post', html: {multipart: true} do |f| %>
                 <div class="row">
                   <div class="form-group">
                     <span class="btn btn-default btn-file text-babu">
                       写真を選択
-                      <%= file_field_tag "image[]", type: :file, multiple: true %>
+                      <%= file_field_tag "images[]", type: :file, multiple: true %>
                     </span>
                   </div>
                 </div>
