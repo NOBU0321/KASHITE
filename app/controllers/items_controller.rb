@@ -15,7 +15,8 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to listing_item_path(@item), notice: "掲載しました"
     else
-      render :new, notice: "全ての欄を記入してください"
+      flash[:alert] = "全ての欄を記入してください"
+      render :new
     end
   end
 
@@ -44,7 +45,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       flash[:notice] = "変更しました"
     else
-      flash[:notice] = "変更箇所に間違いがあります"
+      flash[:alert] = "変更箇所に間違いがあります"
     end
     redirect_back(fallback_location: request.referer)
   end
