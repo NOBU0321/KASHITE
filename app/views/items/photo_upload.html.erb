@@ -14,8 +14,23 @@
           <div class="row">
             <div class="col-md-offset-3 col-md-6">
 
+              <%= form_for @item, url: item_photos_path(@item), method: 'post', html: {multipart: true} do |f| %>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="btn btn-default btn-file text-babu">
+                      写真を選択
+                      <%= file_field_tag "images[]", type: :file, multiple: true %>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <%= f.submit "写真を追加", class: "btn btn-form" %>
+                </div>
+              <% end %>
             </div>
           </div>
+            <div id="photos"><%= render 'photos/photos_list' %></div>
         </div>
       </div>
 
