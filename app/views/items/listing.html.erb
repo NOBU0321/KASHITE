@@ -43,8 +43,8 @@
 
               <div class="col-md-4 select">
                 <div class="form-group">
-                  <label>送料</label>
-                  <%= f.select :delivery, [["出品者負担(発送、返送)", "出品者負担(発送、返送)"], ["購入者負担(送料、返送)", "購入者負担(送料、返送)"]], id: "delivery", prompt: "選択してください", class: "form-control" %>
+                  <label>取引方法</label>
+                  <%= f.select :delivery, [["直接取引", "直接取引"], ["出品者負担(発送、返送)", "出品者負担(発送、返送)"], ["購入者負担(送料、返送)", "購入者負担(送料、返送)"]], id: "delivery", prompt: "選択してください", class: "form-control" %>
                 </div>
               </div>
             </div>
