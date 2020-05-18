@@ -70,3 +70,5 @@ gem 'devise-i18n-views'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'paperclip'
