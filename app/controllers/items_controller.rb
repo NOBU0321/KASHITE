@@ -44,7 +44,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    new_params = item_params
+    new_params = item_params.merge(active: true) if is_ready_item
+    if @item.update(new_params)
       flash[:notice] = "変更しました"
     else
       flash[:alert] = "変更箇所に間違いがあります"
@@ -59,6 +61,10 @@ class ItemsController < ApplicationController
 
     def is_authorised
       redirect_to root_path, alert: "許可されていないユーザーです" unless current_user.id == @item.user_id
+    end
+
+    def is_ready_item
+      !@item.active && !@item.price.blank? && !@item.listing_name.blank? && !@item.photos.blank? && !@item.address.blank?
     end
 
     def item_params
