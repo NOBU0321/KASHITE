@@ -1,20 +1,42 @@
 <ul class="sidebar-list">
   <li class="sidebar-item">
     <%= link_to "基本情報", listing_item_path, class: "sidebar-link active"%>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
     <%= link_to "レンタル料", pricing_item_path, class: "sidebar-link active"%>
+    <% if !@item.price.blank? %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "説明", description_item_path, class: "sidebar-link active"%>
+    <% if !@item.listing_name.blank? %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "写真", photo_upload_item_path, class: "sidebar-link active"%>
+    <% if !@item.photos.blank? %>
+    <span is="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "アクセサリー", accessories_item_path, class: "sidebar-link active"%>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
   <li class="sidebar-item">
     <%= link_to "発送元", location_item_path, class: "sidebar-link active"%>
+    <% if !@item.address.blank? %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
   </li>
 </ul>
+<hr/>
+
+<% is_ready = !@item.active && !@item.price.blank? && !@item.listing_name.blank? && !@item.photos.blank? && !@item.address.blank? %>
+
+<%= form_with  model: @item, local: true do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <%= f.submit "シェアする", id: "publish-button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>
