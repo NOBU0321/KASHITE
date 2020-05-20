@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-10">
+    <%= image_tag @item.cover_photo(nil), width: "100%" %>
+  </div>
+</div>
+<br/>
+
+<div class="row">
+
+</div>
+
+  <div class="col-md-8">
+
+    <div class="row">
+      <div class="col-md-8">
+        <h1><%= @item.listing_name %></h1>
+        <%= @item.address %>
+      </div>
+      <div class="col-md-4 text-center">
+        <br/><br/>
+        <%# <%= image_tag avatar_url(@item.user), class: "img-circle avatar-large" %>
+        <%= @item.user.fullname %>
+      </div>
+
+    
+    </div>
+    <hr/>
+  
+    <div class="row text-babu">
+      <div class="row text-center row-space-1">
+        <div class="col-md-3">
+          <i class="fa fa-tshirt"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+      </div>
+    
+    </div>
+    <hr/>
+  
+    <div class="row">
+    
+    </div>
+    <hr/>
+  
+    <div class="row">
+    
+    </div>
+    <hr/>
+  
+    <div class="row">
+    
+    </div>
+    <hr/>
+  </div>
+
+  <div class="col-md-4">
+
+  </div>
+
+</div>
+
+

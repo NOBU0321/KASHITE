@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get 'accessories'
       get 'location'
     end
-  resources :photos, only: [:create, :destroy]
+    resources :photos, only: [:create, :destroy]
   end
 end
 
