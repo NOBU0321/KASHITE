@@ -72,3 +72,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'paperclip'
+gem 'font-awesome-sass'

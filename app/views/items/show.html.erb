@@ -9,7 +9,7 @@
 
 </div>
 
-  <div class="col-md-8">
+  <div class="col-md-10">
 
     <div class="row">
       <div class="col-md-8">
@@ -18,34 +18,53 @@
       </div>
       <div class="col-md-4 text-center">
         <br/><br/>
-        <%# <%= image_tag avatar_url(@item.user), class: "img-circle avatar-large" %>
-        <%= @item.user.fullname %>
+        <i class="fas fa-user fa-2x">
+          <%= @item.user.fullname %>
+        </i>
       </div>
 
     
     </div>
     <hr/>
-  
+
+    <!-- 部屋情報 -->
     <div class="row text-babu">
       <div class="row text-center row-space-1">
-        <div class="col-md-3">
-          <i class="fa fa-tshirt"></i>
+        <div class="col-md-2">
+          <i class="fas fa-tshirt fa-2x"></i>
         </div>
-        <div class="col-md-3">
-          <i class="fa fa-home fa-2x"></i>
+        <div class="col-md-2">
+          <i class="fas fa-street-view fa-2x"></i>
         </div>
-        <div class="col-md-3">
-          <i class="fa fa-home fa-2x"></i>
+        <div class="col-md-2">
+          <i class="fas fa-male fa-2x"></i>
         </div>
-        <div class="col-md-3">
-          <i class="fa fa-home fa-2x"></i>
+        <div class="col-md-2">
+          <i class="far fa-comment fa-2x"></i><br>
         </div>
+
+        <div class="col-md-2">
+          <i class="fa fa-truck fa-2x"></i><br>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-2"><%= @item.item_type %></div>
+        <div class="col-md-2"><%= @item.item_scene %></div>
+        <div class="col-md-2"><%= @item.size %>サイズ</div>
+        <div class="col-md-2"><%= @item.status %></div>
+        <div class="col-md-2"><%= @item.delivery %></div>
       </div>
     
     </div>
     <hr/>
-  
+
+    <!-- 詳細説明 -->
     <div class="row">
+      <div class="col-md-12">
+      <h3>●このコーデについて</h3>
+      <p><%= @item.summary %></p>
+      </div>
     
     </div>
     <hr/>
