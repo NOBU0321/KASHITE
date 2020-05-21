@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-12">
     <%= image_tag @item.cover_photo(nil), width: "100%" %>
   </div>
 </div>
@@ -9,7 +9,7 @@
 
 </div>
 
-  <div class="col-md-10">
+  <div class="col-md-8">
 
     <div class="row">
       <div class="col-md-8">
@@ -66,7 +66,28 @@
       <p><%= @item.summary %></p>
       </div>
     
+    <!-- アクセサリー -->
     </div>
+      <div class="col-md-3">
+        <h4>アクセサリー</h4>
+      </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="accessories">
+              <li>ベルト</li>
+              <li>靴</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="accessories">
+              <li>帽子</li>
+              <li>時計</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <hr/>
   
     <div class="row">
