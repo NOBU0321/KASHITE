@@ -76,14 +76,14 @@
         <div class="row">
           <div class="col-md-6">
             <ul class="accessories">
-              <li>ベルト</li>
-              <li>靴</li>
+              <li class="<%= 'text-line-through' if !@item.is_belt %>">ベルト</li>
+              <li class="<%= 'text-line-through' if !@item.is_shoes %>">靴</li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="accessories">
-              <li>帽子</li>
-              <li>時計</li>
+              <li class="<%= 'text-line-through' if !@item.is_hat %>">帽子</li>
+              <li class="<%= 'text-line-through' if !@item.is_watch %>">時計</li>
             </ul>
           </div>
         </div>
