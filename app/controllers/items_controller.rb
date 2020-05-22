@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @photos = @item.photos
   end
 
   def listing
