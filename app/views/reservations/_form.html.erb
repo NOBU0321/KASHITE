@@ -1,7 +1,18 @@
 <%= form_for([@item, @item.reservations.new]) do |f| %>
-  <%= f.text_field :start_date%>
+  <%= f.text_field :start_date%><br/>
   <%= f.text_field :end_date%>
 
   <br/>
   <%= f.submit "今すぐ借りる", class: "btn btn-normal btn-block" %>
 <% end %>
+
+<script>
+  $(function() {
+    $('#reservation_start_date').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+    $('#reservation_end_date').datepicker({
+      dateFormat: 'dd-mm-yy'
+    });
+  });
+</script>
