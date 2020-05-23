@@ -73,3 +73,4 @@ gem 'omniauth-facebook'
 
 gem 'paperclip'
 gem 'font-awesome-sass'
+gem 'jquery-ui-rails', '~> 5.0'
