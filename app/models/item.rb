@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many :photos
+  has_many :reservations
 
   validates :item_type, presence: true
   validates :item_scene, presence: true
