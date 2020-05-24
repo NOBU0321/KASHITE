@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
 
-    if current_user == item.current_user
+    if current_user == item.user
       flash[:alert] = "このアカウントでは予約出来ません"
     else
       start_date = Date.parse(reservation_params[:start_date])
