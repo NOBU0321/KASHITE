@@ -1,10 +1,46 @@
-<%= form_for([@item, @item.reservations.new]) do |f| %>
-  <%= f.text_field :start_date%><br/>
-  <%= f.text_field :end_date%>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span><i class="fa fa" style="color: #ffb400"></i>¥<%= @item.price %></span>
+    <span class="pull-right">1日あたり</span>
+  </div>
+  <div class="panel-body">
+    <%= form_for([@item, @item.reservations.new]) do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <label>開始日</label>
+          <%= f.text_field :start_date, readonly: true, placeholder: "開始日", class: "form-control datepicker"%><br/>
+        </div>
+        <div class="col-md-6">
+          <label>返却日</label>
+          <%= f.text_field :end_date, readonly: true, placeholder: "返却日", class: "form-control datepicker" %><br/>
+        </div>
+      </div>
 
-  <br/>
-  <%= f.submit "今すぐ借りる", class: "btn btn-normal btn-block" %>
-<% end %>
+
+      <div id="preview" style="display: none">
+        <table class="reservation-table">
+          <tbody>
+            <tr>
+              <td>料金</td>
+              <td class="text-right">¥<%= @item.price %></td>
+            </tr>
+            <tr>
+              <td>日数</td>
+              <td class="text-right">× <span id="reservation_days"></span></td>
+            </tr>
+            <tr>
+              <td class="total">合計</td>
+              <td class="text-right">¥<span id="reservation_total"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <%= f.submit "今すぐ借りる", class: "btn btn-normal btn-block" %>
+    <% end %>
+  </div>
+</div>
+
 
 <script>
   $(function() {
