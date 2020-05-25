@@ -22,6 +22,11 @@ class ReservationsController < ApplicationController
     redirect_to item
   end
 
+  def your_coordinations
+    @coordinations = current_user.reservations.order(start_date: :asc)
+  end
+
+
   private
     def reservation_params
       params.require(:reservation).permit(:start_date, :end_date)
