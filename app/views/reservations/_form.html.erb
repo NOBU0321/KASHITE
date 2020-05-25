@@ -107,8 +107,8 @@
                   $('#btn_book').attr('disabled', false);
 
                   var total = nights * <%= @item.price %>
-                  $('#reservation_nights').text(日数);
-                  $('#reservation_total').text(合計);
+                  $('#reservation_nights').text(nights);
+                  $('#reservation_total').text(total);
                 }
               }
             });
