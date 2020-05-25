@@ -62,7 +62,25 @@ class ItemsController < ApplicationController
     render json: reservations
   end
 
+  def preview
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+
+    output = {
+      conflict: is_conflict(start_date, end_date, @item)
+    }
+
+    render json: output
+  end
+
+
   private
+
+    def is_conflict(start_date, end_date, item)
+      check = item.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+      check.size > 0? true: false
+    end
+
     def set_item
       @item = Item.find(params[:id])
     end
