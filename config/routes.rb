@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   end
 
   get '/your_coordinations' => 'reservations#your_coordinations'
+  get '/your_reservations' => 'reservations#your_reservations'
 end
 

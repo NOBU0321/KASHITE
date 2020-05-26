@@ -26,6 +26,10 @@ class ReservationsController < ApplicationController
     @coordinations = current_user.reservations.order(start_date: :asc)
   end
 
+  def your_reservations
+    @items = current_user.items
+  end
+
 
   private
     def reservation_params
