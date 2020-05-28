@@ -22,7 +22,9 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
   end
 
-  get '/your_coordinations' => 'reservations#your_coordinations'
-  get '/your_reservations' => 'reservations#your_reservations'
+  get '/your_coordinations': 'reservations#your_coordinations'
+  get '/your_reservations': 'reservations#your_reservations'
+
+  get 'search': 'pages#search'
 end
 
