@@ -24,5 +24,7 @@ Rails.application.routes.draw do
 
   get '/your_coordinations' => 'reservations#your_coordinations'
   get '/your_reservations' => 'reservations#your_reservations'
+
+  get 'search' => 'pages#search'
 end
 
