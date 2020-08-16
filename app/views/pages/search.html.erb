@@ -7,97 +7,97 @@
 
         <%= search_form_for @search, url: search_path do |f| %>
 
+        <div class="ri">
+          <div class="col-md-7">
+            <label>価格幅:</label>
+          </div>
+          <div class="col-md-2">
+            <label>最低価格：</label>
+            <%= f.text_field :price_gteq, class: "form-control" %>
+          </div>
+          <div class="col-md-2">
+            <label>最高価格：</label>
+            <%= f.text_field :price_lteq, class: "form-control" %>
+          </div>
+        </div>
+        <hr/>
+
           <div class="row">
-            <div class="col-md-8">
-              <label>価格幅:</label>
+            <div class="col-md-6">
+              <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "貸し出し開始日", class: "form-control datepicker" %>
             </div>
-            <div class="col-md-2">
-              <label>最低価格：</label>
-              <%= f.text_field :price_gteq, class: "form-control" %>
-            </div>
-            <div class="col-md-2">
-              <label>最高価格：</label>
-              <%= f.text_field :price_lteq, class: "form-control" %>
+            <div class="col-md-6">
+              <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "貸し出し終了日", class: "form-control datepicker" %>
             </div>
           </div>
           <hr/>
 
-            <div class="row">
-              <div class="col-md-6">
-                <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "貸し出し開始日", class: "form-control datepicker" %>
-              </div>
-              <div class="col-md-6">
-                <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "貸し出し終了日", class: "form-control datepicker" %>
-              </div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= check_box_tag "q[item_type_eq_any][]", "Entire" %>　アイテム全体
             </div>
-            <hr/>
+          </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[item_type_eq_any][]", "Private" %>　プライベート
+            </div>
+          </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[item_type_eq_any][]", "Shared" %>　シェア
+            </div>
+          </div>
+          <hr/>
 
-            <div class="row">
-              <div class="col-md-4">
-                <%= check_box_tag "q[item_type_eq_any][]", "Entire" %>　アイテム全体
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>シーン別おすすめ</label>
+                <%= f.select :item_scene_gteq, [["普段着", "普段着"], ["デート", "デート"], ["ビジネス", "ビジネス"], ["レジャー", "レジャー"], ["パーティー", "パーティー"], ["結婚式", "結婚式"], ["その他", "その他"]], id: "item_scene", prompt: "選択してください", class: "form-control" %>
               </div>
             </div>
-              <div class="col-md-4">
-                <%= check_box_tag "q[item_type_eq_any][]", "Private" %>　プライベート
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>サイズ</label>
+                <%= f.select :size_gteq, [["XS", "XS"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"], ["XXL", "XXL"]], id: "size", prompt: "選択してください", class: "form-control" %>
               </div>
             </div>
-              <div class="col-md-4">
-                <%= check_box_tag "q[item_type_eq_any][]", "Shared" %>　シェア
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>商品の状態</label>
+                <%= f.select :status_gteq, [["新品未使用", "新品未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れ無し", "目立った傷や汚れ無し"], ["やや傷や汚れあり", "やや傷や汚れあり"]], id: "status", prompt: "選択してください", class: "form-control" %>
               </div>
             </div>
-            <hr/>
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>取引方法</label>
+                <%= f.select :delivery_gteq, [["直接取引", "直接取引"], ["出品者負担(発送、返送)", "出品者負担(発送、返送)"], ["購入者負担(送料、返送)", "購入者負担(送料、返送)"]], id: "delivery", prompt: "選択してください", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <hr/>
 
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group select">
-                  <label>シーン別おすすめ</label>
-                  <%= f.select :item_scene_gteq, [["普段着", "普段着"], ["デート", "デート"], ["ビジネス", "ビジネス"], ["レジャー", "レジャー"], ["パーティー", "パーティー"], ["結婚式", "結婚式"], ["その他", "その他"]], id: "item_scene", prompt: "選択してください", class: "form-control" %>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group select">
-                  <label>サイズ</label>
-                  <%= f.select :size_gteq, [["XS", "XS"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"], ["XXL", "XXL"]], id: "size", prompt: "選択してください", class: "form-control" %>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group select">
-                  <label>商品の状態</label>
-                  <%= f.select :status_gteq, [["新品未使用", "新品未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れ無し", "目立った傷や汚れ無し"], ["やや傷や汚れあり", "やや傷や汚れあり"]], id: "status", prompt: "選択してください", class: "form-control" %>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group select">
-                  <label>取引方法</label>
-                  <%= f.select :delivery_gteq, [["直接取引", "直接取引"], ["出品者負担(発送、返送)", "出品者負担(発送、返送)"], ["購入者負担(送料、返送)", "購入者負担(送料、返送)"]], id: "delivery", prompt: "選択してください", class: "form-control" %>
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_belt_eq]", true %> ベルト
             </div>
-            <hr/>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_shoes_eq]", true %> 靴
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_hat_eq]", true %> 帽子
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_watch_eq]", true %> 時計
+            </div>
+          </div>
+          <hr/>
 
-            <div class="row">
-              <div class="col-md-4">
-                <%= check_box_tag "q[is_belt_eq]", true %> ベルト
-              </div>
-              <div class="col-md-4">
-                <%= check_box_tag "q[is_shoes_eq]", true %> 靴
-              </div>
-              <div class="col-md-4">
-                <%= check_box_tag "q[is_hat_eq]", true %> 帽子
-              </div>
-              <div class="col-md-4">
-                <%= check_box_tag "q[is_watch_eq]", true %> 時計
-              </div>
-            </div>
-            <hr/>
-
-            <div class="row text-center">
-              <%= f.submit "検索", class: "btn btn-form" %>
-            </div>
-            
-        <% end %>
-      </div>
-      <br/>
+          <div class="row text-center">
+            <%= f.submit "検索", class: "btn btn-form" %>
+          </div>
+          
+      <% end %>
+    </div>
+    <br/>
 
     </div>
   </div>

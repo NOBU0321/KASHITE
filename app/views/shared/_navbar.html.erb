@@ -13,6 +13,9 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
+          <button class="btn btn-primary btn-small"> 
+            <%= link_to "商品を検索", search_path, style: "color: white; text-decoration: none;" %>
+          </button>
           <button class="btn btn-danger btn-small">
             <%= link_to "新規投稿", new_item_path, style: "color: white; text-decoration: none;" %>
           </button>
